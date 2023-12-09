@@ -1,6 +1,8 @@
 - name: Simple Update and Install Play
   hosts: all  # or specify your target hosts
   become: no  # if you need to run tasks as sudo
+  environment:
+    ANSIBLE_HOST_KEY_CHECKING: False
   tasks:
     - name: Install aptitude
       apt:
