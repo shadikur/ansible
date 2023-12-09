@@ -1,6 +1,19 @@
-tasks:
+- name: Simple Update and Install Play
+  hosts: all  # or specify your target hosts
+  become: no  # if you need to run tasks as sudo
+  tasks:
     - name: Install aptitude
       apt:
         name: aptitude
         state: latest
         update_cache: true
+
+    - name: Install wget
+      apt:
+        name: wget
+        state: present
+
+    - name: Install zip
+      apt:
+        name: zip
+        state: present
